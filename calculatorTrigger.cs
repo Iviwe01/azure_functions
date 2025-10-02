@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using Company.Function.Models;
 
 namespace Company.Function;
 
@@ -20,7 +21,13 @@ public class calculatorTrigger
         int a,
         int b)
     {
-        int result = a + b;
-        return new OkObjectResult($"The result of adding {a} and {b} is: {result}");
+        var result = new CalculationResults
+        {
+            A = a,
+            B = b,
+            Result = a + b,
+            Operation = "add"
+        };
+        return new OkObjectResult(result);
     }
 }
