@@ -1,0 +1,3 @@
+http://localhost:7008/api/HttpTrigger1
+
+// api to the "welcome to Iviwe azure function"
