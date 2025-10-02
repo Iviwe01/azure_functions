@@ -15,9 +15,12 @@ public class calculatorTrigger
     }
 
     [Function("calculatorTrigger")]
-    public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "calculator/{a:int}/{b:int}")] HttpRequest req, int a,int b)
+    public IActionResult Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "calculator/{a:int}/{b:int}")] HttpRequest req,
+        int a,
+        int b)
     {
         int result = a + b;
-        return new OkObjectResult("$The result of adding {a} and {b} is: {result}");
+        return new OkObjectResult($"The result of adding {a} and {b} is: {result}");
     }
 }

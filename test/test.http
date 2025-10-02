@@ -4,4 +4,4 @@ GET http://localhost:7071/api/hello/world
 GET http://localhost:7071/api/hello/world
 
 ###
-[GET] http://localhost:7008/api/calculator/{a:int}/{b:int}
+GET http://localhost:7008/api/calculator/{a:int}/{b:int}
